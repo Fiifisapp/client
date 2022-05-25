@@ -36,16 +36,17 @@ export const Button = styled.button`
     width: 7em;
     height: 8vh;
     border: none;
-    background-color: black;
+    background-color: white ;
     font-size: 1.3em;
     font-weight: bold;
     border-radius: 8px;
-    color: white;
+    
+    color: #EEA40E;
 
     &:hover{
         cursor: pointer;
         background-color: white;
-        color: #EEA40E;
+        color: black;
     }
 `;
 
