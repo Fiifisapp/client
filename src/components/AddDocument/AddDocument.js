@@ -1,22 +1,23 @@
 import { useNavigate } from "react-router-dom";
+import { Overlay, ModalContainer, HeaderText, ButtonContainer, Button, Close } from "./AddDocument.Style";
 
 const AddDocument = ({ open, onClose }) => {
   const navigate = useNavigate();
   if (!open) return null;
 
   return (
-    <div>
-      <div className="overlay" onClick={onClose}>
-        <div className="modal-container" onClick={(e) => e.stopPropagation()}>
-          <h2 onClick={onClose}>X</h2>
-          <p>click to upload a PDF or text</p>
-          <div className="button-container">
-            <button>upload PDF</button>
-            <button>upload text</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <Overlay className="overlay" onClick={onClose}>
+        <ModalContainer className="modal-container" onClick={(e) => e.stopPropagation()}>
+          <Close onClick={onClose}>X</Close>
+          <HeaderText>click to upload a PDF or text</HeaderText>
+          <ButtonContainer className="button-container">
+            <Button>upload PDF</Button>
+            <Button>upload text</Button>
+          </ButtonContainer>
+        </ModalContainer>
+      </Overlay>
+    </>
   );
 };
 
