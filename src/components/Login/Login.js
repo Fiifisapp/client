@@ -45,7 +45,7 @@ const Login = () => {
       toast.success("Login Successful");
       navigate("/dashboard");
     } else {
-
+      toast.error("please check your password")
     }
     reset();
     // navigate("/dashboard");
