@@ -1,12 +1,12 @@
 import React from 'react'
-import { DocumentContainer,  HeaderText} from './Documents.Style'
+import { DocumentContainer,  HeaderText, Button} from './Documents.Style'
 
 const Documents = () => {
   return (
     <div>
       <HeaderText>Documents</HeaderText>
       <DocumentContainer className="document container">
-        Documents
+        <Button>add document</Button>
       </DocumentContainer>
     </div>
   )

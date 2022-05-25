@@ -17,3 +17,20 @@ export const HeaderText = styled.h1`
     left: 40%;
     font-size: 4em;
 `;
+
+export const Button = styled.button`
+    width: 10em;
+    height: 8vh;
+    background-color: #EEA40E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.3em;
+    font-weight: bold; 
+    margin-left: 2em;
+    margin-top: 2em;
+
+    &:hover{
+        cursor: pointer;
+    }
+`;
