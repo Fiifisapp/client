@@ -30,6 +30,7 @@ const TextUpload = ({ open, onClose }) => {
 
   const {
     register,
+    handleSubmit,
     formState: { errors },
     reset,
   } = useForm({
@@ -42,7 +43,7 @@ const TextUpload = ({ open, onClose }) => {
 
   if (!open) return null;
   return (
-    <div>
+    <>
       <Overlay className="overlay" onClick={onClose}>
         <ModalContainer
           className="modal-container"
@@ -50,7 +51,7 @@ const TextUpload = ({ open, onClose }) => {
         >
           <Close onClick={onClose}> x </Close>
           <HeaderText>Text Upload</HeaderText>
-          <FormContainer className="form-container" onSubmit={onSubmitHandler}>
+          <FormContainer className="form-container" onSubmit={handleSubmit(onSubmitHandler)}>
             <InputContainer className="input-container">
               <Input
                 {...register("documentName")}
@@ -96,7 +97,7 @@ const TextUpload = ({ open, onClose }) => {
           </FormContainer>
         </ModalContainer>
       </Overlay>
-    </div>
+    </>
   );
 };
 

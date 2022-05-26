@@ -9,9 +9,11 @@ import {
   Close,
 } from "./AddDocument.Style";
 import TextUpload from "../TextUpload/TextUpload";
+import PDFUpload from "../PDFUpload/PDFUpload";
 
 const AddDocument = ({ open, onClose }) => {
   const [uploadText, setUploadText] = useState(false);
+  const [uploadPDF, setUploadPDF] = useState(false);
 
   const navigate = useNavigate();
 
@@ -27,7 +29,7 @@ const AddDocument = ({ open, onClose }) => {
           <Close onClick={onClose}>X</Close>
           <HeaderText>click to upload a PDF or text</HeaderText>
           <ButtonContainer className="button-container">
-            <Button onClick={() => navigate("pdf-upload")}>
+            <Button onClick={() => setUploadPDF(true)}>
               upload PDF
             </Button>
             <Button  onClick={() => setUploadText(true)}>
@@ -35,6 +37,7 @@ const AddDocument = ({ open, onClose }) => {
             </Button>
           </ButtonContainer>
           <TextUpload open={uploadText} onClose={() => setUploadText(false)}/>
+          <PDFUpload open={uploadPDF} onClose={() => setUploadPDF(false)}/>
         </ModalContainer>
       </Overlay>
     </>
