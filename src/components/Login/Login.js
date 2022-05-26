@@ -26,7 +26,6 @@ const Login = () => {
 
   const {
     register,
-    // handleSubmit,
     formState: { errors },
     reset,
   } = useForm({
@@ -36,20 +35,6 @@ const Login = () => {
 
 
   // const notify = () => toast.success("sign up successful, login now");
-
-  const onSubmitHandler = () => {
-    const auth = data.filter(
-      (infoData) => infoData.password === password
-    );
-    if (auth) {
-      toast.success("Login Successful");
-      navigate("/dashboard");
-    } else {
-      toast.error("please check your password")
-    }
-    reset();
-    // navigate("/dashboard");
-  };
 
   const getData = async () => {
     try {
@@ -61,6 +46,21 @@ const Login = () => {
       console.error(error);
     }
   };
+  const onSubmitHandler = () => {
+    const auth = data.map(
+      (infoData) => infoData.password ===  password && infoData.email === email
+    );
+    
+    if (auth) {
+      toast.success("Login Successful");
+      navigate("/dashboard");
+    } else {
+      
+    }
+    reset();
+  };
+
+ 
 
   useEffect(() => {
     getData();

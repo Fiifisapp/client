@@ -1,4 +1,5 @@
-import { useNavigate, Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useState  } from "react";
 import {
   Overlay,
   ModalContainer,
@@ -7,8 +8,11 @@ import {
   Button,
   Close,
 } from "./AddDocument.Style";
+import TextUpload from "../TextUpload/TextUpload";
 
 const AddDocument = ({ open, onClose }) => {
+  const [uploadText, setUploadText] = useState(false);
+
   const navigate = useNavigate();
 
   if (!open) return null;
@@ -26,13 +30,13 @@ const AddDocument = ({ open, onClose }) => {
             <Button onClick={() => navigate("pdf-upload")}>
               upload PDF
             </Button>
-            <Button onClick={() => navigate("text-upload")}>
+            <Button  onClick={() => setUploadText(true)}>
               upload text
             </Button>
           </ButtonContainer>
+          <TextUpload open={uploadText} onClose={() => setUploadText(false)}/>
         </ModalContainer>
       </Overlay>
-      <Outlet/>
     </>
   );
 };
