@@ -103,8 +103,7 @@ export const InputContainer = styled.div`
 `;
 
 export const Close = styled.p`
-  font-size: 1.8em;
-  font-weight: bold;
+  font-size: 1.3em;
   color: black;
   position: absolute;
   top: 15%;
