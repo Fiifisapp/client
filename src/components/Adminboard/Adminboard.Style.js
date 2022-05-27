@@ -21,8 +21,7 @@ export const SidebarContainer = styled.div`
   gap: 5px;
 `;
 export const LogoutButton = styled.button`
-  height: 15vh;
-  padding-left: 1.5em;
+ height: 15vh;
   padding-top: 1.5em;
   font-size: 1.4em;
   font-weight: bold;
@@ -30,8 +29,11 @@ export const LogoutButton = styled.button`
   border: none;
   background-color: #EEA40E;
   color: white;
+  display: flex;
+  justify-content: center;
 
   &:hover{
-    background-color: #FBE5B9;
+    background-color: white;
+    color: #EEA40E;
   }
 `;

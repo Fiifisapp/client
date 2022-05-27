@@ -29,7 +29,7 @@ const Adminboard = () => {
             borderRadius: "8px",
           })}
         >
-          <BsUiChecks />
+          <BsUiChecks style={{ paddingTop: "0.2em" }}/>
           Checker
         </NavLink>
         <NavLink
@@ -46,7 +46,7 @@ const Adminboard = () => {
             borderRadius: "8px",
           })}
         >
-          <HiDocumentDuplicate />
+          <HiDocumentDuplicate style={{ paddingTop: "0.2em" }}/>
           Documents
         </NavLink>
         <NavLink
@@ -63,10 +63,10 @@ const Adminboard = () => {
             borderRadius: "8px",
           })}
         >
-          <FaUsers />
+          <FaUsers style={{ paddingTop: "0.2em" }}/>
           Users
         </NavLink>
-        <LogoutButton>
+        <LogoutButton onClick={() => navigate("/")}>
           <HiOutlineLogout />
           logout
         </LogoutButton>
