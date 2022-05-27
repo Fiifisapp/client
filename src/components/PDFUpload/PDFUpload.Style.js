@@ -57,14 +57,14 @@ export const TextContent = styled.input`
   width: 83%;
   height: 30vh;
   border-radius: 8px;
-  background-color: #e2e0de;
+  background-color: #FBE5B9;
+  border: 3px dashed #eea40e;
   color: black;
   font-size: 1.2em;
   font-weight: lighter;
   padding-left: 1em;
   padding-top: 1em;
   outline: none;
-  border: none;
 
   &::placeholder {
     font-size: 1em;
