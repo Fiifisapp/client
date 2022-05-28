@@ -10,12 +10,13 @@ import {
   Logo,
 } from "./Documents.Style";
 import AddDocument from "../AddDocument/AddDocument";
+import EditDelete from "../EditDelete/EditDelete";
 import axios from "axios";
 import Pdf from "../../assets/pdf_logo.png";
 import doc from "../../assets/text_logo.png";
-
 const Documents = () => {
-  const [openModal, setOpenModal] = useState(false);
+  const [addDocs, setAddDocs] = useState(false);
+  const [updateDocs, setUpdateDocs] = useState(false);
   const [documentData, setDocumentData] = useState([]);
 
   useEffect(() => {
@@ -30,15 +31,15 @@ const Documents = () => {
     <div>
       <HeaderText>Documents</HeaderText>
       <DocumentContainer className="document container">
-        <Button onClick={() => setOpenModal(true)}>add document</Button>
+        <Button onClick={() => setAddDocs(true)}>add document</Button>
         <FilesContainer className="files-container">
           {documentData.map((document, i) => (
             <FileContent key={i} className="file-content">
               <FileLogo className="file-logo">
                 {document.format === "PDF" ? (
-                  <Logo src={Pdf} alt="" />
+                  <Logo src={Pdf} alt="" onClick={() => setUpdateDocs(true)} />
                 ) : (
-                  <Logo src={doc} alt="" />
+                  <Logo src={doc} alt="" onClick={() => setUpdateDocs(true)} />
                 )}
               </FileLogo>
               <FileName className="file-name">{document.documentName}</FileName>
@@ -46,7 +47,8 @@ const Documents = () => {
           ))}
         </FilesContainer>
       </DocumentContainer>
-      <AddDocument open={openModal} onClose={() => setOpenModal(false)} />
+      <AddDocument open={addDocs} onClose={() => setAddDocs(false)} />
+      <EditDelete open={updateDocs} onClose={() => setUpdateDocs(false)} />
     </div>
   );
 };

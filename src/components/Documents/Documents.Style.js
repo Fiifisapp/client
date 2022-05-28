@@ -18,33 +18,33 @@ export const HeaderText = styled.h1`
   font-size: 4em;
 `;
 export const FileContent = styled.div`
-    height: 17vh;
-    margin: 0 auto;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-Content: center;
+  height: 17vh;
+  margin: 0 auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const FileLogo = styled.div`
-    margin: 0 auto;
-    place-items: center;
+  margin: 0 auto;
+  place-items: center;
 `;
 
 export const Logo = styled.img`
-    margin: 0 auto;
+  margin: 0 auto;
 `;
 
 export const FileName = styled.div`
-    overflow: hidden;
-    font-size: 0.7em;
-    font-weight: bold;
-    text-align: center;
-    width: 100%;
-    height: 2vh;
-    color: black;
-    place-items: center;
+  overflow: hidden;
+  font-size: 0.7em;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  height: 2vh;
+  color: black;
+  place-items: center;
 `;
 
 export const FilesContainer = styled.div`
@@ -53,7 +53,7 @@ export const FilesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   grid-template-rows: auto;
-  gap: 1em 1em; 
+  gap: 1em 1em;
   border: 1px solid #eea40e;
   border-radius: 10px;
   margin: 2em auto;
@@ -76,3 +76,4 @@ export const Button = styled.button`
     cursor: pointer;
   }
 `;
+
