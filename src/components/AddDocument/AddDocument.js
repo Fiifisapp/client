@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { useState  } from "react";
 import {
   Overlay,
@@ -14,9 +13,6 @@ import PDFUpload from "../PDFUpload/PDFUpload";
 const AddDocument = ({ open, onClose }) => {
   const [uploadText, setUploadText] = useState(false);
   const [uploadPDF, setUploadPDF] = useState(false);
-
-  const navigate = useNavigate();
-
   if (!open) return null;
 
   return (
