@@ -15,6 +15,7 @@ const Sidebar = () => {
   return (
     <div>
       <SidebarContainer className="sidebar-container">
+        
         <Button onClick={() => setOpenModal(true)}>
           <Content className="content">
             <RiAdminFill style={{ color: "white" }} />

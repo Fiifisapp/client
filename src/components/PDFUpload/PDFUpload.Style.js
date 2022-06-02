@@ -57,8 +57,8 @@ export const TextContent = styled.input`
   width: 83%;
   height: 30vh;
   border-radius: 8px;
-  background-color: #FBE5B9;
-  border: 3px dashed #eea40e;
+  background-color: #e2e0de;
+  border: 3px dashed grey;
   color: black;
   font-size: 1.2em;
   font-weight: lighter;
@@ -66,10 +66,28 @@ export const TextContent = styled.input`
   padding-top: 1em;
   outline: none;
 
+
   &::placeholder {
     font-size: 1em;
     font-weight: lighter;
     color: black;
+  }
+
+  &::file-selector-button{
+    position: absolute;
+    left: 45%;
+    margin-top: 2em;
+    width: 7em;
+    background-color: #EEA40E;
+    height: 7vh;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold; 
+
+    &:hover{
+      cursor: pointer;
+    }
   }
 `;
 

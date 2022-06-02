@@ -15,13 +15,14 @@ export const ModalContainer = styled.div`
     margin: 12em auto;
     width: 30%;
     height: 40vh;
-    background-color: #EEA40E;
+    background-color: white;
+    color: #EEA40E;
 `;
 
 export const HeaderText = styled.h2`
     padding-bottom: 0.4em;
     font-size: 2em;
-    color: white;
+    color: #EEA40E;
     text-align: center;
 `;
 export const ButtonContainer = styled.div`
@@ -38,17 +39,17 @@ export const Button = styled.button`
     width: 7em;
     height: 8vh;
     border: none;
-    background-color: white ;
+    background-color: #EEA40E;
     font-size: 1.3em;
     font-weight: bold;
     border-radius: 8px;
     
-    color: #EEA40E;
+    color: white;
 
     &:hover{
         cursor: pointer;
-        background-color: white;
-        color: black;
+        background-color: black;
+        color: white;
     }
 `;
 

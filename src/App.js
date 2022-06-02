@@ -6,11 +6,13 @@ import Adminboard from "./components/Adminboard/Adminboard";
 import Documents from "./components/Documents/Documents";
 import Users from "./components/Users/Users";
 import Checker from "./components/Checker/Checker";
+import DocumentProvider from "./Context/DocumentProvider";
 
 
 function App() {
   return (
     <Router>
+      <DocumentProvider>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/authen" element={<Authen />} />
@@ -24,6 +26,7 @@ function App() {
           <Route path="checker" element={<Checker />} />
         </Route>
       </Routes>
+      </DocumentProvider>
     </Router>
   );
 }

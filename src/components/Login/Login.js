@@ -86,6 +86,7 @@ const Login = () => {
         <Input
           {...register("email")}
           placeholder="email"
+          data-testid = "input"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
