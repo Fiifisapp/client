@@ -47,7 +47,7 @@ const AdminModal = ({ open, onClose }) => {
   const getData = async () => {
     try {
       const result = await axios.get(
-        `https://6286d96de9494df61b2e3243.mockapi.io/AminData`
+        `https://6286d96de9494df61b2e3243.mockapi.io/AdminData`
       );
       setData(result.data);
     } catch (error) {

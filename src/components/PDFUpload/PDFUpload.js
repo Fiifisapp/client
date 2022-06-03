@@ -24,7 +24,7 @@ const schema = yup.object().shape({
   content: yup.mixed().required("File is required"),
 });
 
-const PDFUpload = ({ open, onClose }) => {
+const PDFUpload = ({ open, onClose, getDocuments }) => {
   const [documentName, setDocumentName] = useState("");
   const [documentAuthor, setDocumentAuthor] = useState("");
   const [description, setDescription] = useState("");
@@ -48,6 +48,8 @@ const PDFUpload = ({ open, onClose }) => {
       description,
       content,
       format
+    }).then(() => {
+      getDocuments()
     })
   }
 

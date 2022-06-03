@@ -26,7 +26,7 @@ const Users = () => {
 
   useEffect(() => {
     axios
-      .get(`https://6286d96de9494df61b2e3243.mockapi.io/CrudData`)
+      .get(`https://6286d96de9494df61b2e3243.mockapi.io/UsersData`)
       .then((response) => {
         setAPIData(response.data);
       });
@@ -34,14 +34,14 @@ const Users = () => {
 
 
   const onDelete = (id) => {
-    axios.delete(`https://6286d96de9494df61b2e3243.mockapi.io/CrudData/${id}`).then(() => {
+    axios.delete(`https://6286d96de9494df61b2e3243.mockapi.io/UsersData/${id}`).then(() => {
       getData();
     })
   }
 
   // updating the table after a delete operation
   const getData = () => {
-    axios.get(`https://6286d96de9494df61b2e3243.mockapi.io/CrudData`).then((getData) => {
+    axios.get(`https://6286d96de9494df61b2e3243.mockapi.io/UsersData`).then((getData) => {
       setAPIData(getData.data)
     })
   }
@@ -57,17 +57,14 @@ const Users = () => {
   }
 
 
-  // const twoFunction = () => {
-  //   setUpdateModal(true);
-  //   setData();
-  // }
+  
   return (
     <div>
       <HeaderText>Users</HeaderText>
       <UserContainer className="user-container">
         <Button onClick={() => setOpenModal(true)}>add</Button>
       </UserContainer>
-      <AddUserModal open={openModal} onClose={() => setOpenModal(false)} />
+      <AddUserModal open={openModal} onClose={() => setOpenModal(false)} getData={getData} />
       <TableWrapper>
         <THead>
           <TR>

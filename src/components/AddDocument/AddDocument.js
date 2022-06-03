@@ -10,7 +10,7 @@ import {
 import TextUpload from "../TextUpload/TextUpload";
 import PDFUpload from "../PDFUpload/PDFUpload";
 
-const AddDocument = ({ open, onClose }) => {
+const AddDocument = ({ open, onClose, getDocuments }) => {
   const [uploadText, setUploadText] = useState(false);
   const [uploadPDF, setUploadPDF] = useState(false);
   if (!open) return null;
@@ -32,8 +32,8 @@ const AddDocument = ({ open, onClose }) => {
               upload text
             </Button>
           </ButtonContainer>
-          <TextUpload open={uploadText} onClose={() => setUploadText(false)}/>
-          <PDFUpload open={uploadPDF} onClose={() => setUploadPDF(false)}/>
+          <TextUpload open={uploadText} onClose={() => setUploadText(false)} getDocuments={getDocuments}/>
+          <PDFUpload open={uploadPDF} onClose={() => setUploadPDF(false)} getDocuments={getDocuments}/>
         </ModalContainer>
       </Overlay>
     </>

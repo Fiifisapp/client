@@ -10,12 +10,10 @@ import {
   Close,
 } from "./EditDelete.Style";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const EditDelete = (props) => {
   const [uploadText, setUploadText] = useState(false);
   const [uploadPDF, setUploadPDF] = useState(false);
-  const navigate = useNavigate();
   const close = props.onClose
   const deleteFile = () => {
     const ID = props.data.id;
@@ -23,10 +21,9 @@ const EditDelete = (props) => {
     axios
       .delete(`https://6286d96de9494df61b2e3243.mockapi.io/DocumentsData/${ID}`)
       .then(() => {
-        close()
-      });
+        props.getDocuments()
+      })
       close()
-      navigate("/dashboard/documents")
   };
 
   if (!props.open) return null;

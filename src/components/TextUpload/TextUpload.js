@@ -24,7 +24,7 @@ const schema = yup.object().shape({
   content: yup.string().required(),
 });
 
-const TextUpload = ({ open, onClose }) => {
+const TextUpload = ({ open, onClose, getDocuments }) => {
   const [documentName, setDocumentName] = useState("");
   const [documentAuthor, setDocumentAuthor] = useState("");
   const [description, setDescription] = useState("");
@@ -48,6 +48,8 @@ const TextUpload = ({ open, onClose }) => {
       description,
       content,
       format
+    }).then(() => {
+      getDocuments()
     })
   }
 

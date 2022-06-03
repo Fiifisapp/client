@@ -3,25 +3,35 @@ import {
   DocumentContainer,
   HeaderText,
   Button,
-  FilesContainer,
+  FilesContainer
 } from "./Documents.Style";
 import { DocumentState } from "../../Context/DocumentProvider";
 import AddDocument from "../AddDocument/AddDocument";
 import axios from "axios";
 import SingleFile from "../Files/SingleFile";
 
+
 const Documents = () => {
   const { documents, setDocuments } = DocumentState();
 
   const [addDocs, setAddDocs] = useState(false);
 
-  useEffect(() => {
+  
+
+  const getDocuments = () => {
     axios
       .get(`https://6286d96de9494df61b2e3243.mockapi.io/DocumentsData`)
       .then((Response) => {
         setDocuments(Response.data);
       });
-  }, [setDocuments]);
+  }
+  useEffect (() => {
+    getDocuments()
+  }, [])
+
+  
+
+  console.log(documents)
 
   return (
     <div>
@@ -29,15 +39,14 @@ const Documents = () => {
       <DocumentContainer className="document container">
         <Button onClick={() => setAddDocs(true)}>add document</Button>
         <FilesContainer className="files-container">
-          { documents? ( documents.map((document, i) => (
-            <SingleFile document={document} index={i} key={i}/> 
-          ))
-          ) : <p style={{color: "black"}}>No documents available</p>
-        }
+          {documents && (
+            documents.map((document, i) => (
+              <SingleFile document={document} getDocuments={getDocuments}/>
+            ))
+          )} 
         </FilesContainer>
       </DocumentContainer>
-      <AddDocument open={addDocs} onClose={() => setAddDocs(false)} />
-      
+      <AddDocument open={addDocs} onClose={() => setAddDocs(false)} getDocuments={getDocuments}/>
     </div>
   );
 };

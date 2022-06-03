@@ -39,7 +39,7 @@ const Login = () => {
   const getData = async () => {
     try {
       const result = await axios.get(
-        `https://6286d96de9494df61b2e3243.mockapi.io/CrudData`
+        `https://6286d96de9494df61b2e3243.mockapi.io/UsersData`
       );
       setData(result.data);
     } catch (error) {

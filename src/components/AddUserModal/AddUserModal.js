@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useNavigate } from "react-router-dom";
 import {
   FormContainer,
   Input,
@@ -20,26 +19,27 @@ const schema = yup.object().shape({
   password: yup.string().min(8).max(32).required(),
 });
 
-const AddUserModal = ({ open, onClose }) => {
+const AddUserModal = ({ open, onClose, getData }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const navigate = useNavigate();
 
 
   const postData = (data) => {
-    axios.post(`https://6286d96de9494df61b2e3243.mockapi.io/CrudData`, {
+    axios.post(`https://6286d96de9494df61b2e3243.mockapi.io/UsersData`, {
     name,  
     email,
     password
+    }).then(() => {
+      getData()
     });
-    navigate("/Adminboard/users");
   };
 
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -49,6 +49,7 @@ const AddUserModal = ({ open, onClose }) => {
 
   const onSubmitHandler = (data) => {
     onClose()
+    reset()
   };
 
   return (
