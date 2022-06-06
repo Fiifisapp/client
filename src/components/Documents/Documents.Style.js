@@ -23,11 +23,11 @@ export const FilesContainer = styled.div`
   height: 75%;
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: auto;
+  grid-template-rows: repeat(9, 1fr);
   gap: 1em 1em;
   border: 1px solid #eea40e;
   border-radius: 10px;
-  margin: 2em auto;
+  margin: 1em auto;
   overflow-y: scroll;
 `;
 
@@ -47,4 +47,3 @@ export const Button = styled.button`
     cursor: pointer;
   }
 `;
-
