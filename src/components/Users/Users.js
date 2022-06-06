@@ -90,7 +90,7 @@ const Users = () => {
                     marginTop: "0.4em"
                   }}
                 >
-                  <EditButton className="edit-button" onClick={() => setData(data)}>
+                  <EditButton className="edit-button" onClick={() => setData(data)} getData={getData}>
                     <FiEdit />
                   </EditButton>
                   <DeleteButton onClick={() => onDelete(data.id)} className="delete-button">

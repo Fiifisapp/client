@@ -20,7 +20,7 @@ const schema = yup.object().shape({
   password: yup.string().min(8).max(32).required(),
 });
 
-const UpdateModal = ({ open, onClose }) => {
+const UpdateModal = ({ open, onClose, getData }) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] =useState('');
@@ -50,6 +50,7 @@ const UpdateModal = ({ open, onClose }) => {
 
 
   const sendDataAPI = () => {
+    getData()
       axios.put(`https://6286d96de9494df61b2e3243.mockapi.io/UsersData/${id}`, {
           name,
           email,
